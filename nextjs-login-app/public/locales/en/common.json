@@ -1,0 +1,14 @@
+{
+  "loginTitle": "Sign in",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "forgotPassword": "Forgot Password?",
+  "loginError": "Invalid email or password.",
+  "loginSuccess": "Login successful! Welcome, {{name}}.",
+  "forgotTitle": "Forgot Password",
+  "submit": "Submit",
+  "resetSent": "A password reset link has been sent to {{email}}.",
+  "invalidEmail": "Please enter a valid email address.",
+  "language": "Language"
+}

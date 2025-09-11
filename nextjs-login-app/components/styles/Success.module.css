@@ -1,0 +1,12 @@
+.card {
+    padding: 28px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #eef2ff, #fff);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+    max-width: 420px
+}
+
+.sub {
+    color: var(--muted);
+    margin-bottom: 12px
+}

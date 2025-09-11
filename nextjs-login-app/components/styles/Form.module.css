@@ -1,0 +1,45 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px
+}
+
+.label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--muted)
+}
+
+.input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e6edf3;
+    background: var(--card);
+    outline: none;
+    transition: box-shadow .15s
+}
+
+.input:focus {
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12);
+    border-color: var(--accent)
+}
+
+.formCard {
+    width: 420px;
+    background: linear-gradient(180deg, #fff, #fbfdff);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06)
+}
+
+.link {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none
+}
+
+.error {
+    color: var(--danger);
+    font-size: 13px;
+    margin-top: 8px
+}
