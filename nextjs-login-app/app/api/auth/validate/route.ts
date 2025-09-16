@@ -19,9 +19,9 @@ export async function POST(request: Request) {
     const users = JSON.parse(raw) as Array<any>;
 
     const user = users.find(
-      (u) =>
-        u.email.toLowerCase() === String(email).toLowerCase() &&
-        u.password === password
+      (usr) =>
+        usr.email.toLowerCase() === String(email).toLowerCase() &&
+        usr.password === password
     );
 
     if (user) {

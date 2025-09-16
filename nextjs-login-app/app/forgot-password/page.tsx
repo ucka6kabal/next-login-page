@@ -16,10 +16,10 @@ export default function ForgotPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
   const [lang, setLang] = useState("en");
-  const [t, setT] = useState<any>({});
+  const [translations, setTranslations] = useState<any>({});
 
   useEffect(() => {
-    loadLocale(lang).then(setT);
+    loadLocale(lang).then(setTranslations);
   }, [lang]);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -27,7 +27,7 @@ export default function ForgotPage() {
     setError(undefined);
 
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setError(t?.invalidEmail || "Please enter a valid email address.");
+      setError(translations?.invalidEmail || "Please enter a valid email address.");
       return;
     }
 
@@ -54,7 +54,7 @@ export default function ForgotPage() {
       <div style={{ display: "flex", justifyContent: "center", marginTop: 60 }}>
         <SuccessScreen
           title={
-            t?.resetSent?.replace("{{email}}", email) ||
+            translations?.resetSent?.replace("{{email}}", email) ||
             `Reset link sent to ${email}`
           }
         />
@@ -72,13 +72,13 @@ export default function ForgotPage() {
             alignItems: "center",
             marginBottom: 14,
           }}>
-          <h1 style={{ margin: 0 }}>{t?.forgotTitle || "Forgot Password"}</h1>
+          <h1 style={{ margin: 0 }}>{translations?.forgotTitle || "Forgot Password"}</h1>
           <LanguageSwitcher value={lang} onChange={setLang} />
         </div>
 
         <form onSubmit={handleSubmit}>
           <TextInput
-            label={t?.email || "Email"}
+            label={translations?.email || "Email"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
@@ -91,7 +91,7 @@ export default function ForgotPage() {
               justifyContent: "flex-end",
               marginTop: 12,
             }}>
-            <Button type="submit">{t?.submit || "Submit"}</Button>
+            <Button type="submit">{translations?.submit || "Submit"}</Button>
           </div>
         </form>
       </div>
