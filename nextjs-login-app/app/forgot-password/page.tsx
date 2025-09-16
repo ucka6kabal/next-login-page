@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import TextInput from "@/components/inputs/TextInput";
 import Button from "@/components/ui/Button";
 import SuccessScreen from "@/components/ui/SuccessScreen";
-import styles from "@/components/styles/Form.module.css";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import Link from "next/link";
+
+import styles from "@/components/styles/Form.module.css";
 
 async function loadLocale(lang: string) {
   const res = await fetch(`/locales/${lang}/common.json`);
@@ -27,7 +29,9 @@ export default function ForgotPage() {
     setError(undefined);
 
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setError(translations?.invalidEmail || "Please enter a valid email address.");
+      setError(
+        translations?.invalidEmail || "Please enter a valid email address."
+      );
       return;
     }
 
@@ -72,7 +76,9 @@ export default function ForgotPage() {
             alignItems: "center",
             marginBottom: 14,
           }}>
-          <h1 style={{ margin: 0 }}>{translations?.forgotTitle || "Forgot Password"}</h1>
+          <h1 style={{ margin: 0 }}>
+            {translations?.forgotTitle || "Forgot Password"}
+          </h1>
           <LanguageSwitcher value={lang} onChange={setLang} />
         </div>
 
@@ -88,9 +94,12 @@ export default function ForgotPage() {
           <div
             style={{
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: "space-between",
               marginTop: 12,
             }}>
+            <Link href="/" className={styles.link}>
+              {translations?.loginTitle || "Sign in"}
+            </Link>
             <Button type="submit">{translations?.submit || "Submit"}</Button>
           </div>
         </form>
